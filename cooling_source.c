@@ -284,8 +284,8 @@ void CoolingSource (const Data *d, double dt, timeStep *Dts, Grid *grid)
     double mixed_cooling_time = prs_org*mixed_Temp*mixed_cooling_time_const_factor/mixed_rho_square;
     double t_growth = pow(mixed_cooling_time*t_destroy, 1./2.);
     double chi = rho_cl/rho_h;
-    double cold_growth_by_mixing = pow(pow(f_m_cl,2.)*(1.-f_m_cl),3./2.)*dt/(chi*t_growth);
-    double cold_dest_by_mixing = pow(pow((1.-f_m_cl),2.)*(f_m_cl),3./2.)*dt*pow(chi, 1./2.)/t_destroy;
+    double cold_growth_by_mixing = pow(pow((1.-f_m_cl),2.)*(f_m_cl),3./2.)*dt/(chi*t_growth);
+    double cold_dest_by_mixing = pow(pow(f_m_cl,2.)*(1.-f_m_cl),3./2.)*dt*pow(chi, 1./2.)/t_destroy;
     double net_growth = net_growth_radiative + cold_growth_by_mixing - cold_dest_by_mixing;
 
     if (mixed_cooling_time != mixed_cooling_time){
